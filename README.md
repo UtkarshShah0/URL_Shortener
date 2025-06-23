@@ -11,6 +11,7 @@ A simple URL shortener service built with FastAPI, SQLModel, and SQLite. This pr
 - [How to Run the Server](#how-to-run-the-server)
 - [How to Run the Frontend (Optional)](#how-to-run-the-frontend-optional)
 - [API Usage Examples](#api-usage-examples)
+- [Testing](#testing)
 
 ---
 
@@ -153,5 +154,50 @@ Content-Type: application/json
   "created_at": "2024-06-10T12:00:00Z",
   "click_count": 5
 }
+
+```
+---
+
+## 🧰 Testing Tools Used
+
+| Tool                | Purpose                                 |
+|---------------------|-----------------------------------------|
+| `pytest`            | Running unit, integration, and API tests|
+| `pytest-cov`        | Measuring code coverage                 |
+| FastAPI `TestClient`| For API endpoint testing                |
+| SQLModel + SQLite   | In-memory test DB interactions          |
+
+---
+
+## 🧪 Run Commands (Per Test Type)
+
+Each test type can be run separately to generate individual coverage reports.
+
+### ✅ Unit Tests
+
+```bash
+pytest test/unit --cov=database --cov-report=term-missing
+```
+### Unit Test Coverage
+<img width="1084" alt="unit_test" src="https://github.com/user-attachments/assets/2edda873-b88b-4ceb-b6ff-0b1f1671cdb7" />
+
+
+### 🔁 Integration Tests
+
+```bash
+pytest test/integration --cov=database --cov-report=term-missing
+```
+### Integration Test Coverage
+<img width="1084" alt="integration_test" src="https://github.com/user-attachments/assets/7559238c-d70c-4fca-90ac-bebccaa918dd" />
+
+
+### 🌐 API Tests
+
+```bash
+pytest test/api --cov=app --cov-report=term-missing
 ```
 
+### API Test Coverage
+<img width="1084" alt="api_test" src="https://github.com/user-attachments/assets/5713eddc-9758-4fd0-bbb5-94a4c18ffd5a" />
+
+---
