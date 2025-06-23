@@ -158,7 +158,7 @@ Content-Type: application/json
 ```
 ---
 
-## 🧰 Testing Tools Used
+## Testing
 
 | Tool                | Purpose                                 |
 |---------------------|-----------------------------------------|
@@ -169,11 +169,11 @@ Content-Type: application/json
 
 ---
 
-## 🧪 Run Commands (Per Test Type)
+## Run Commands (Per Test Type)
 
 Each test type can be run separately to generate individual coverage reports.
 
-### ✅ Unit Tests
+### Unit Tests
 
 ```bash
 pytest test/unit --cov=database --cov-report=term-missing
@@ -182,7 +182,7 @@ pytest test/unit --cov=database --cov-report=term-missing
 <img width="1084" alt="unit_test" src="https://github.com/user-attachments/assets/2edda873-b88b-4ceb-b6ff-0b1f1671cdb7" />
 
 
-### 🔁 Integration Tests
+### Integration Tests
 
 ```bash
 pytest test/integration --cov=database --cov-report=term-missing
@@ -191,7 +191,7 @@ pytest test/integration --cov=database --cov-report=term-missing
 <img width="1084" alt="integration_test" src="https://github.com/user-attachments/assets/7559238c-d70c-4fca-90ac-bebccaa918dd" />
 
 
-### 🌐 API Tests
+### API Tests
 
 ```bash
 pytest test/api --cov=app --cov-report=term-missing
