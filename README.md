@@ -12,6 +12,8 @@ A simple URL shortener service built with FastAPI, SQLModel, and SQLite. This pr
 - [How to Run the Frontend (Optional)](#how-to-run-the-frontend-optional)
 - [API Usage Examples](#api-usage-examples)
 - [Testing](#testing)
+- [Keploy API Testing Report](#keploy-api-testing-report)
+- [CI/CD Configuration](#ci/cd-configuration)
 
 ---
 
@@ -201,3 +203,15 @@ pytest test/api --cov=app --cov-report=term-missing
 <img width="1084" alt="api_test" src="https://github.com/user-attachments/assets/5713eddc-9758-4fd0-bbb5-94a4c18ffd5a" />
 
 ---
+
+## Keploy API Testing Report
+
+<img width="960" alt="dashboard_6" src="https://github.com/user-attachments/assets/787fdde8-de60-4930-bd5e-f6941fc2ae66" />
+
+---
+
+## CI/CD Configuration
+
+GitHub Actions to run the Keploy test suite.
+[View CI Workflow](.github/workflows/ci.yml)
+
