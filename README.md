@@ -13,7 +13,7 @@ A simple URL shortener service built with FastAPI, SQLModel, and SQLite. This pr
 - [API Usage Examples](#api-usage-examples)
 - [Testing](#testing)
 - [Keploy API Testing Report](#keploy-api-testing-report)
-- [CI/CD Configuration](#ci/cd-configuration)
+- [CI/CD Configuration](#cicd-configuration)
 
 ---
 
