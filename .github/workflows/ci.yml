@@ -31,20 +31,9 @@ jobs:
       - name: Start FastAPI App
         run: |
           nohup uvicorn app:app --host 0.0.0.0 --port 8000 &
-
-          
-      - name: Print env var (debug)
-        run: echo "Keploy Key is ${KEPLOY_API_KEY}"
-        env:
-          KEPLOY_API_KEY: ${{ secrets.KEPLOY_API_KEY }}
-
       
       - name: Run Keploy Test Suite
         env:
           KEPLOY_API_KEY: 4uMKkOGenUyhYAxQeQ
         run: |
-          keploy test-suite \
-          --app=2708df25-69f7-420c-a42f-2729ce30fd57 \
-          --base-path http://127.0.0.1:8000 \
-          --cloud \
-          --header "x-api-key: ${KEPLOY_API_KEY}"
+          keploy test-suite --app=2708df25-69f7-420c-a42f-2729ce30fd57 --base-path http://127.0.0.1:8000 --cloud 
