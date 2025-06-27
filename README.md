@@ -1,6 +1,6 @@
 # FastAPI URL Shortener
 
-A simple URL shortener service built with FastAPI, SQLModel, and SQLite. This project allows you to shorten URLs, retrieve original URLs, track click counts, update, and delete short URLs via a RESTful API.
+A simple URL shortener service built with FastAPI, SQLModel, and SQLite. This project allows you to shorten URLs, retrieve original URLs, track click counts, update, and delete short URLs via a RESTful API
 
 ---
 
