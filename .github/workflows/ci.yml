@@ -41,7 +41,7 @@ jobs:
       
       - name: Run Keploy Test Suite
         env:
-          KEPLOY_API_KEY: ${{ secrets.KEPLOY_API_KEY }}
+          KEPLOY_API_KEY: 4uMKkOGenUyhYAxQeQ
         run: |
           keploy test-suite \
           --app=2708df25-69f7-420c-a42f-2729ce30fd57 \
