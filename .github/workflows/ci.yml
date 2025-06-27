@@ -32,6 +32,13 @@ jobs:
         run: |
           nohup uvicorn app:app --host 0.0.0.0 --port 8000 &
 
+          
+      - name: Print env var (debug)
+        run: echo "Keploy Key is ${KEPLOY_API_KEY}"
+        env:
+          KEPLOY_API_KEY: ${{ secrets.KEPLOY_API_KEY }}
+
+      
       - name: Run Keploy Test Suite
         env:
           KEPLOY_API_KEY: ${{ secrets.KEPLOY_API_KEY }}
