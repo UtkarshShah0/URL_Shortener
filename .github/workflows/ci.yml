@@ -1,9 +1,39 @@
-- name: Install Keploy CLI
-  run: |
-    curl --silent -L https://keploy.io/ent/install.sh | bash
+name: Keploy CI
 
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
-- name: Run Keploy Test Suite
-  run: |
-    export KEPLOY_API_KEY=${{ secrets.KEPLOY_API_KEY }}
-    keploy test-suite --app=2708df25-69f7-420c-a42f-2729ce30fd57 --base-path http://127.0.0.1:8000 --cloud
+jobs:
+  keploy-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Install Keploy CLI
+        run: |
+          curl --silent -L https://keploy.io/ent/install.sh | bash
+
+      - name: Start FastAPI App
+        run: |
+          nohup uvicorn app:app --host 0.0.0.0 --port 8000 &
+
+      - name: Run Keploy Test Suite
+        env:
+          KEPLOY_API_KEY: ${{ secrets.KEPLOY_API_KEY }}
+        run: |
+          keploy test-suite --app=2708df25-69f7-420c-a42f-2729ce30fd57 --base-path http://127.0.0.1:8000 --cloud
